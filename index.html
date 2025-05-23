@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AR Map Navigation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://rawcdn.githack.com/AR-js-org/AR.js/3.4.2/aframe/build/aframe-ar.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="map"></div>
+<div class="buttons">
+  <button onclick="resetDestination()">🔄 إعادة التحديد</button>
+  <button onclick="toggleStyle()">🌓 تغيير الستايل</button>
+</div>
+
+<a-scene embedded arjs>
+  <a-entity id="arrow" geometry="primitive: cone; radiusBottom: 0.2; radiusTop: 0; height: 0.5"
+            material="color: green" position="0 1 -2" rotation="0 0 0">
+  </a-entity>
+  <a-marker-camera preset="hiro"></a-marker-camera>
+</a-scene>
+
+<script src="script.js"></script>
+</body>
+</html>
